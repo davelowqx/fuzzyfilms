@@ -3,13 +3,13 @@ import { Layout, Seo } from "components/common";
 import { Intro, Skills, Contact, Projects } from "components/landing";
 
 const Home = () => (
-	<Layout>
-		<Seo />
-		<Intro />
-		<Projects />
-		<Skills />
-		<Contact />
-	</Layout>
+  <Layout>
+    <Seo />
+    <Intro />
+    <Skills />
+    <Projects />
+    <Contact />
+  </Layout>
 );
 
 export default Home;
