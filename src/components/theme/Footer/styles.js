@@ -1,5 +1,5 @@
-import footerIllustration from 'assets/illustrations/footer.svg';
-import styled from 'styled-components';
+import footerIllustration from "assets/illustrations/footer.svg";
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   padding: 28rem 0 4rem 0;
@@ -47,6 +47,11 @@ export const Details = styled.div`
   h2,
   a,
   span {
+    color: #212121;
+  }
+
+  h3 {
+    font-family: "Affectionately Yours";
     color: #212121;
   }
 

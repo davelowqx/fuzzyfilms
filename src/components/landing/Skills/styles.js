@@ -1,12 +1,6 @@
-import styled from 'styled-components';
-import detailsIllustration from 'assets/illustrations/details.svg';
+import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  background-image: url(${detailsIllustration});
-  background-size: contain;
-  background-position: left top;
-  background-repeat: no-repeat;
-`;
+export const Wrapper = styled.div``;
 
 export const SkillsWrapper = styled.div`
   padding: 4rem 0;
@@ -28,26 +22,19 @@ export const Details = styled.div`
     width: 100%;
   }
 
-  h1 {
+  h2 {
     margin-bottom: 2rem;
-    font-size: 26pt;
-    color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#212121')};
-
-    @media (max-width: 960px) {
-      mix-blend-mode: ${({ theme }) => (theme === 'light' ? 'unset' : 'difference')};
-    }
+    font-size: 20pt;
+    color: #212121;
   }
 
   p {
-    margin-bottom: 2.5rem;
-    font-size: 20pt;
+    font-family: LibreFranklin;
+    margin-bottom: 1rem;
+    font-size: 14pt;
     font-weight: normal;
-    line-height: 1.3;
-    color: ${({ theme }) => (theme === 'dark' ? '#c7c7c7' : '#707070')};
-
-    @media (max-width: 960px) {
-      mix-blend-mode: ${({ theme }) => (theme === 'light' ? 'unset' : 'difference')};
-    }
+    line-height: 1.5;
+    color: #707070;
   }
 `;
 

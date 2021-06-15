@@ -8,99 +8,26 @@ import { Wrapper, Grid, Item, Content, Stats, Languages } from "./styles";
 
 export const Projects = () => {
   const { theme } = useContext(ThemeContext);
-  const {
-    github: {
-      viewer: {
-        repositories: { edges },
-      },
-    },
-  } = {
-    github: {
-      viewer: {
-        repositories: { edges: [] },
-      },
-    },
-  };
-  /*
-  const {
-    github: {
-      viewer: {
-        repositories: { edges },
-      },
-    },
-  } = useStaticQuery(
-    graphql`
-      {
-        github {
-          viewer {
-            repositories(
-              first: 8
-              orderBy: { field: STARGAZERS, direction: DESC }
-            ) {
-              edges {
-                node {
-                  id
-                  name
-                  url
-                  description
-                  stargazers {
-                    totalCount
-                  }
-                  forkCount
-                  languages(first: 3) {
-                    nodes {
-                      id
-                      name
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `
-  );
-  */
+  const videos = [
+    429553859, 395751458, 393493064, 393252091, 393251491, 393251469, 393251435,
+    393251262, 393250436,
+  ];
   return (
     <Wrapper as={Container} id="projects">
-      <h2>Projects</h2>
       <Grid>
-        {edges.map(({ node }) => (
-          <Item
-            key={node.id}
-            as="a"
-            href={node.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            theme={theme}
-          >
-            <Card theme={theme}>
-              <Content>
-                <h4>{node.name}</h4>
-                <p>{node.description}</p>
-              </Content>
-              <TitleWrap>
-                <Stats theme={theme}>
-                  <div>
-                    <Star color={theme === "light" ? "#000" : "#fff"} />
-                    <span>{node.stargazers.totalCount}</span>
-                  </div>
-                  <div>
-                    <Fork color={theme === "light" ? "#000" : "#fff"} />
-                    <span>{node.forkCount}</span>
-                  </div>
-                </Stats>
-                <Stats theme={theme}>
-                  <Languages>
-                    {node.languages.nodes.map(({ id, name }) => (
-                      <span key={id}>{name}</span>
-                    ))}
-                  </Languages>
-                </Stats>
-              </TitleWrap>
-            </Card>
-          </Item>
+        <h2>PAST WORKS</h2>
+        <p>Grab some popcorn!</p>
+        {videos.map((id) => (
+          <div style={{ alignItems: "center" }}>
+            <iframe
+              src={`https://player.vimeo.com/video/${id}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`}
+              width="1280"
+              height="536"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
         ))}
       </Grid>
     </Wrapper>

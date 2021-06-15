@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { ThemeContext } from 'providers/ThemeProvider';
-import { Header } from 'components/theme';
-import { Container, Button } from 'components/common';
-import dev from 'assets/illustrations/dev.svg';
-import { Wrapper, IntroWrapper, Details, Thumbnail } from './styles';
+import React, { useContext } from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import { ThemeContext } from "providers/ThemeProvider";
+import { Header } from "components/theme";
+import { Container, Button } from "components/common";
+import { Wrapper, IntroWrapper, Details } from "./styles";
 
 export const Intro = () => {
   const { theme } = useContext(ThemeContext);
@@ -14,16 +13,19 @@ export const Intro = () => {
       <Header />
       <IntroWrapper as={Container}>
         <Details theme={theme}>
-          <h1>Hi There!</h1>
-          <h4>I’m John and I’m a JAMStack engineer!</h4>
-          <Button as={AnchorLink} href="#contact">
-            Hire me
-          </Button>
+          <h1>IT'S YOUR SPECIAL DAY</h1>
         </Details>
-        <Thumbnail>
-          <img src={dev} alt="I’m John and I’m a JAMStack engineer!" />
-        </Thumbnail>
+        <Details theme={theme}>
+          <p>
+            We craft cinematic highlight reels that last a lifetime. If you are
+            currently searching for actual day videography, look no further.{" "}
+            <AnchorLink href="#about">
+              <u>Here's why.</u>
+            </AnchorLink>
+          </p>
+        </Details>
       </IntroWrapper>
+      <hr style={{ width: "80%" }}></hr>
     </Wrapper>
   );
 };
