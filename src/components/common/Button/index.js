@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Button = styled.button`
   cursor: pointer;
-  border-radius: 3px;
   padding: 0.7rem 2.5rem;
+  width: unset;
   border: none;
   -webkit-appearance: none;
   -webkit-touch-callout: none;
@@ -12,8 +12,8 @@ export const Button = styled.button`
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #fff;
-  background: #0074d9;
+  color: #000;
+  background: #e1c48f;
 
   &:focus {
     outline: none;
@@ -22,10 +22,7 @@ export const Button = styled.button`
   &:disabled {
     background: gray;
   }
-
-  ${({ secondary }) =>
-    secondary &&
-    `
-		background: #E1C48F;
-	`}
+  @media (max-width: 960px) {
+    width: 100%;
+  }
 `;

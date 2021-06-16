@@ -3,9 +3,10 @@ import axios from "axios";
 import { Formik, Form, FastField, ErrorMessage } from "formik";
 import Recaptcha from "react-google-recaptcha";
 import * as Yup from "yup";
-import { url } from "data/config";
 import { Button, Input } from "components/common";
 import { Error, Center, InputField } from "./styles";
+
+const url = "https://fuzzyfilms.co";
 
 const ContactForm = () => (
   <Formik
@@ -121,7 +122,7 @@ const ContactForm = () => (
           </InputField>
         )}
         <Center>
-          <Button secondary type="submit" disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting}>
             Submit
           </Button>
         </Center>

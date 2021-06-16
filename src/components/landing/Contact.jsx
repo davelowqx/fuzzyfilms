@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ContactForm from "./ContactForm";
 
 const Wrapper = styled.div`
-  padding: 4rem 0;
+  padding: 3rem 0;
   justify-content: space-between;
 `;
 
@@ -15,9 +15,9 @@ export const Contact = () => (
     <Details>
       <h2>
         LET'S CHAT
-        <aria role="img" aria-label="">
+        <span role="img" aria-label="">
           ☕
-        </aria>
+        </span>
       </h2>
       <p>We'd love to hear from you!</p>
       <ContactForm />

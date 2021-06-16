@@ -1,16 +1,17 @@
 import React from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import { Container } from "components/common";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  padding: 4rem 0;
+  padding: 3rem 0;
   align-items: center;
 `;
 
 const Details = styled.div`
   padding: 1rem 0;
 `;
+
+const handleClick = () => console.log("magic!");
 
 export const Skills = () => {
   return (
@@ -23,14 +24,15 @@ export const Skills = () => {
           </span>
         </h2>
         <p>
-          We pride ourselves in operating specialised cinema cameras capable of
-          4K resolutions, paired with industry-standard workflows to achieve
-          high-end, filmic images that will withstand the test of time.{" "}
-          <AnchorLink href="#projects">See it for yourself!</AnchorLink>
+          We operate specialised cinema cameras, paired with indstry-standard
+          workflows to achieve high-end, filmic images that will withstand the
+          test of time. <a onClick={handleClick}>See it for yourself!</a>
         </p>
         <figure>
-          <img src="/stills/couple1.png" />
-          <img src="/stills/bride1.png" />
+          <img alt="couple" src="/stills/couple1.png" />
+        </figure>
+        <figure>
+          <img alt="bride" src="/stills/bride1.png" />
         </figure>
       </Details>
       <Details>
@@ -41,15 +43,9 @@ export const Skills = () => {
           </span>
         </h2>
         <p>Pay for what you need. By the hour, breaks excluded.</p>
-        <p>
-          And the best part? <b>Express Edits at no additional surcharge.</b>
-        </p>
-        <p>
-          Having an infallible deadline makes my job more exciting. Definitely a
-          win-win.{" "}
-        </p>
+        <p>3am Gatecrash? Steady, no early surcharge.</p>
         <figure>
-          <img src="/stills/angpao.png" />
+          <img alt="angpao" src="/stills/angpao.png" />
           <figcaption>Huat ah!</figcaption>
         </figure>
       </Details>
@@ -65,7 +61,7 @@ export const Skills = () => {
           document your day, just the way it is ~.
         </p>
         <figure>
-          <img src="/stills/enjoy.png" />
+          <img alt="enjoy" src="/stills/enjoy.png" />
           <figcaption>Sparkles!</figcaption>
         </figure>
       </Details>

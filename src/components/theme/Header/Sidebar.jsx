@@ -1,6 +1,9 @@
+import React from "react";
+import NavbarLinks from "./NavbarLinks";
+
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   position: fixed;
   z-index: 4;
   overflow: auto;
@@ -20,11 +23,21 @@ export const Wrapper = styled.div`
 			opacity: 1;
 
 			@media (max-width: 960px) {
-				width: 40%;
+				width: 30%;
 			}
 
 			@media (max-width: 600px) {
-				width: 75%;
+				width: 50%;
 			}
 	`}
 `;
+
+const Sidebar = ({ sidebar, toggle }) => {
+  return (
+    <Wrapper active={sidebar} onClick={toggle}>
+      <NavbarLinks />
+    </Wrapper>
+  );
+};
+
+export default Sidebar;

@@ -1,18 +1,16 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { Header } from "components/theme";
 import { Container } from "components/common";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  padding: 4rem 0;
+  padding: 3rem 0;
   text-align: center;
 `;
 
 const Details = styled.div`
   h1 {
     font-size: 24pt;
-    color: #212121;
   }
 
   p {
@@ -25,10 +23,11 @@ const Details = styled.div`
 export const Intro = () => {
   return (
     <>
-      <Header />
       <Wrapper as={Container}>
         <Details>
-          <h1>IT'S YOUR SPECIAL DAY </h1>
+          <h1>
+            IT'S YOUR <mark>SPECIAL DAY </mark>
+          </h1>
         </Details>
         <Details>
           <p>
@@ -37,7 +36,7 @@ export const Intro = () => {
             <AnchorLink href="#about">Here's why.</AnchorLink>
           </p>
         </Details>
-        <img src="/stills/dance.gif" />
+        <img alt="dance" src="/stills/dance.gif" />
       </Wrapper>
     </>
   );

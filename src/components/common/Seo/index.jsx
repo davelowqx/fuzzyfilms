@@ -3,15 +3,15 @@ import Helmet from "react-helmet";
 import Thumbnail from "assets/thumbnail/thumbnail.png";
 
 import {
-  url,
-  defaultDescription,
-  defaultTitle,
-  socialLinks,
   address,
-  contact,
+  defaultTitle,
+  defaultDescription,
   legalName,
-  foundingDate,
+  url,
   logo,
+  foundingDate,
+  contact,
+  socialLinks,
 } from "data/config";
 
 export const Seo = ({
@@ -60,7 +60,6 @@ export const Seo = ({
       <meta property="og:image" content={Thumbnail} />
 
       <script type="application/ld+json">{structuredDataOrganization}</script>
-      <link rel="publisher" href={socialLinks.google} />
       <title>{title}</title>
       <html lang="en" dir="ltr" />
     </Helmet>

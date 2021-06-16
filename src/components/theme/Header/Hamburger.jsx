@@ -1,6 +1,8 @@
+import React from "react";
+
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   z-index: 5;
   top: 1.6rem;
   right: 1.8rem;
@@ -30,7 +32,7 @@ export const Wrapper = styled.div`
 	`}
 `;
 
-export const Bar = styled.div`
+const Bar = styled.div`
   width: 1.6rem;
   height: 0.15rem;
   margin-bottom: 0.3rem;
@@ -66,3 +68,15 @@ export const Bar = styled.div`
 			transform: translateY(-6px) rotate(-45deg);
 	`}
 `;
+
+const Hamburger = ({ sidebar, toggle }) => {
+  return (
+    <Wrapper sidebar={sidebar} onClick={() => toggle(!sidebar)}>
+      <Bar top sidebar={sidebar} />
+      <Bar mid sidebar={sidebar} />
+      <Bar bottom sidebar={sidebar} />
+    </Wrapper>
+  );
+};
+
+export default Hamburger;
