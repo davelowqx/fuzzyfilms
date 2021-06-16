@@ -14,6 +14,7 @@ export const Global = createGlobalStyle`
     background: var(--light-grey);
   },
 
+
   html {
     font-family: 'Roboto', Helvetica, sans-serif;
     -ms-text-size-adjust: 100%;
@@ -22,12 +23,8 @@ export const Global = createGlobalStyle`
     article,
     aside,
     details,
-    figcaption {
-      font-family: LibreFranklin;
-      text-align: center;
-      font-size: 0.65rem;
-      color: var(--dark-grey);
-    }
+    figcaption,
+    figure,
     footer,
     header,
     main,
@@ -56,19 +53,17 @@ export const Global = createGlobalStyle`
     }
     a {
       color: var(--gold);
-      -webkit-text-decoration-skip: objects;
-    }
-    a:link {
-      color: var(--gold);
       text-decoration: none;
-      background-color: none;
+      background-color: transparent;
+      -webkit-text-decoration-skip: objects;
+      outline-width: 0;
     }
     a:hover {
-      color: var(--black);
+      color: inherit;
       background-color: var(--light-grey);
     }
-    a:active {
-      color: var(--black);
+    a:active{
+      color: inherit;
       background-color: var(--blue);
     }
     abbr[title] {
@@ -83,6 +78,10 @@ export const Global = createGlobalStyle`
     }
     dfn {
       font-style: italic;
+    }
+    h1 {
+      font-size: 2em;
+      margin: 0.67em 0;
     }
     mark {
       background-color: var(--gold);
@@ -208,16 +207,15 @@ export const Global = createGlobalStyle`
     }
     img {
       border-style: none;
-      width: 100%;
       max-width: 100%;
       margin-left: 0;
       margin-right: 0;
       margin-top: 0;
-      margin-bottom: 0.5rem;
       padding-bottom: 0;
       padding-left: 0;
       padding-right: 0;
       padding-top: 0;
+      margin-bottom: 0.5rem;
     }
     h1 {
       margin-left: 0;
@@ -228,7 +226,7 @@ export const Global = createGlobalStyle`
       padding-right: 0;
       padding-top: 0;
       margin-bottom: 1.45rem;
-      color: var(--black);
+      color: inherit;
       font-weight: bold;
       text-rendering: optimizeLegibility;
       font-size: 2.25rem;
@@ -365,7 +363,6 @@ export const Global = createGlobalStyle`
     }
     p {
       font-family: LibreFranklin;
-      margin-bottom: 1rem;
       font-size: 0.85028rem;
       line-height: 1.5;
       color: var(--dark-grey);
@@ -376,6 +373,7 @@ export const Global = createGlobalStyle`
       padding-left: 0;
       padding-right: 0;
       padding-top: 0;
+      margin-bottom: 1rem;
     }
     figure {
       margin-left: 0;
@@ -386,6 +384,12 @@ export const Global = createGlobalStyle`
       padding-right: 0;
       padding-top: 0;
       margin-bottom: .5rem;
+    }
+    figcaption {
+      font-family: LibreFranklin;
+      text-align: center;
+      font-size: 0.65rem;
+      color: var(--dark-grey);
     }
     pre {
       margin-left: 0;
@@ -469,11 +473,17 @@ export const Global = createGlobalStyle`
       margin-bottom: 1.45rem;
     }
     hr {
+      box-sizing: content-box;
+      height: 0;
+      overflow: visible;
+      margin-left: 0;
+      margin-right: 0;
       margin-top: 0;
       padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
       padding-top: 0;
       margin-bottom: calc(1.45rem - 1px);
-      width: 80%;
       background: hsla(0, 0%, 0%, 0.2);
       border: none;
       height: 1px;
@@ -627,6 +637,7 @@ export const Global = createGlobalStyle`
       -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
       font-feature-settings: 'kern', 'liga', 'clig', 'calt';
     }
+
 
     input, select, textarea, button {
       &:focus {
