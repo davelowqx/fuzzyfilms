@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Button = styled.button`
   cursor: pointer;
@@ -26,6 +26,6 @@ export const Button = styled.button`
   ${({ secondary }) =>
     secondary &&
     `
-		background: #001F3F;
+		background: #E1C48F;
 	`}
 `;

@@ -1,44 +1,43 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   a {
-    color: #000;
+    color: #000; !important
     text-decoration: none;
 
-		@media (max-width: 960px) {
-			color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
-		}
+    @media (max-width: 960px) {
+      color: #000;
+    }
   }
 
   ${({ desktop }) =>
     desktop
       ? `
-			align-items: center;
-			display: flex;
+	align-items: center;
+	display: flex;
 
-			@media (max-width: 960px) {
-					display: none;
-			}
+	@media (max-width: 960px) {
+		display: none;
+	}
 
-			a {
-					margin-right: 1rem;
+	a {
+	margin-right: 1rem;
 
-					&:last-child {
-							margin-right: unset;
-					}
-			}
-		`
+	&:last-child {
+		margin-right: unset;
+	}
+	}
+	`
       : `
-			padding: 3rem;
-			display: flex;
-			flex-direction: column;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
 
-			a {
-					margin-bottom: 1rem;
+	a {
+	margin-bottom: 1rem;
 
-					&:last-child {
-							margin-bottom: unset;
-					}
-			}
-	`}
+	&:last-child {
+		margin-bottom: unset;
+	}
+}`}
 `;

@@ -9,6 +9,10 @@ export const Wrapper = styled.div`
 
 export const Brand = styled.a`
   color: #e1c48f;
+  text-decoration: none;
   font-family: "Affectionately Yours";
   font-size: 14pt;
+  hover {
+    text-decoration: none;
+  }
 `;

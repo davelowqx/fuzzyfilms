@@ -9,7 +9,11 @@ export const Global = createGlobalStyle`
     article,
     aside,
     details,
-    figcaption,
+    figcaption {
+      font-family: LibreFranklin;
+      text-align: center;
+      font-size: 0.7rem;
+    }
     figure,
     footer,
     header,
@@ -38,13 +42,19 @@ export const Global = createGlobalStyle`
       display: none;
     }
     a {
-      background-color: transparent;
       -webkit-text-decoration-skip: objects;
     }
-    a:active,
+    a:link {
+      color: #E1C48F;
+      text-decoration: none;
+      background-color: none;
+    }
     a:hover {
+      color: #000;
+      background-color: #a7a7a7;
       outline-width: 0;
     }
+    a:active,
     abbr[title] {
       border-bottom: none;
       text-decoration: underline;
@@ -84,6 +94,7 @@ export const Global = createGlobalStyle`
     }
     img {
       border-style: none;
+      width: 100%;
     }
     svg:not(:root) {
       overflow: hidden;
@@ -97,11 +108,6 @@ export const Global = createGlobalStyle`
     }
     figure {
       margin: 1em 40px;
-    }
-    hr {
-      box-sizing: content-box;
-      height: 0;
-      overflow: visible;
     }
     button,
     input,
@@ -201,11 +207,11 @@ export const Global = createGlobalStyle`
       margin-left: 0;
       margin-right: 0;
       margin-top: 0;
+      margin-bottom: 0.5rem;
       padding-bottom: 0;
       padding-left: 0;
       padding-right: 0;
       padding-top: 0;
-      margin-bottom: 1.45rem;
     }
     h1 {
       margin-left: 0;
@@ -352,6 +358,11 @@ export const Global = createGlobalStyle`
       margin-bottom: 1.45rem;
     }
     p {
+
+      font-family: LibreFranklin;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+      color: #707070;
       margin-left: 0;
       margin-right: 0;
       margin-top: 0;
@@ -359,7 +370,6 @@ export const Global = createGlobalStyle`
       padding-left: 0;
       padding-right: 0;
       padding-top: 0;
-      margin-bottom: 1.45rem;
     }
     figure {
       margin-left: 0;
@@ -369,7 +379,7 @@ export const Global = createGlobalStyle`
       padding-left: 0;
       padding-right: 0;
       padding-top: 0;
-      margin-bottom: 1.45rem;
+      margin-bottom: 2rem;
     }
     pre {
       margin-left: 0;
@@ -453,14 +463,11 @@ export const Global = createGlobalStyle`
       margin-bottom: 1.45rem;
     }
     hr {
-      margin-left: 0;
-      margin-right: 0;
       margin-top: 0;
       padding-bottom: 0;
-      padding-left: 0;
-      padding-right: 0;
       padding-top: 0;
       margin-bottom: calc(1.45rem - 1px);
+      width: 80%;
       background: hsla(0, 0%, 0%, 0.2);
       border: none;
       height: 1px;
@@ -603,10 +610,8 @@ export const Global = createGlobalStyle`
       margin: 0;
       padding: 0;
       font-family: 'Roboto', Helvetica, sans-serif;
-      color: ${({ theme }) =>
-        theme === "light" ? "hsla(0, 0%, 0%, 0.8)" : "#fff"};
-      background-color: ${({ theme }) =>
-        theme === "light" ? "#fff" : "#212121"};
+      color: #000;
+      background-color: #fff;
       transition: .3s all;
       font-weight: normal;
       word-wrap: break-word;
@@ -615,10 +620,6 @@ export const Global = createGlobalStyle`
       -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
       -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
       font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-    }
-
-    a {
-      text-decoration: none;
     }
 
     input, select, textarea, button {

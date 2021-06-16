@@ -1,16 +1,16 @@
 module.exports = {
   defaultTitle: "fuzzyfilms.co",
-  logo: "https://portfolio.smakosh.com/favicon/favicon-512.png",
+  logo: "https://portfolio.smakosh.com/favicon/favicon.png",
   author: "Dave Low",
-  url: "https://portfolio.smakosh.com",
+  url: "https://fuzzyfilms.co",
   legalName: "Dave Low",
-  defaultDescription: "I’m John and I’m a Backend & Devops engineer!",
+  defaultDescription: "I’m Dave a wedding videographer!",
   socialLinks: {
-    instagram: "https://instagram.com/smakosh19",
+    instagram: "https://instagram.com/fuzzyfilms.co",
   },
   googleAnalyticsID: "UA-88875900-4",
-  themeColor: "#6b63ff",
-  backgroundColor: "#6b63ff",
+  themeColor: "#E1C48F",
+  backgroundColor: "#E1C48F",
   address: {
     city: "City",
     region: "Region",
