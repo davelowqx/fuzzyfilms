@@ -3,10 +3,33 @@ import axios from "axios";
 import { Formik, Form, FastField, ErrorMessage } from "formik";
 import Recaptcha from "react-google-recaptcha";
 import * as Yup from "yup";
-import { Button, Input } from "components/common";
-import { Error, Center, InputField } from "./styles";
+import styled from "styled-components";
 
 const url = "https://fuzzyfilms.co";
+
+const Error = styled.span`
+  color: #ff4136;
+`;
+
+const Center = styled.div`
+  text-align: left;
+
+  h4 {
+    font-weight: normal;
+  }
+`;
+
+const InputField = styled.div`
+  position: relative;
+  margin-bottom: 1rem;
+`;
+
+const Input = styled.input`
+  ${({ error }) =>
+    error &&
+    ` border-color: #ff4136;
+      `}
+`;
 
 const ContactForm = () => (
   <Formik
@@ -18,7 +41,7 @@ const ContactForm = () => (
       success: false,
     }}
     validationSchema={Yup.object().shape({
-      name: Yup.string().required("Full name is required"),
+      name: Yup.string().required("Name is required"),
       email: Yup.string().email("Invalid email").required("Email is required"),
       message: Yup.string().required("Message is required"),
       recaptcha:
@@ -65,7 +88,7 @@ const ContactForm = () => (
             name="name"
             component="input"
             aria-label="name"
-            placeholder="Full name*"
+            placeholder="Name*"
             error={touched.name && errors.name}
           />
           <ErrorMessage component={Error} name="name" />
@@ -114,17 +137,14 @@ const ContactForm = () => (
         {values.success && (
           <InputField>
             <Center>
-              <h4>
-                Your message has been successfully sent, I will get back to you
-                ASAP!
-              </h4>
+              <h4>Your message has been sent, we will get back to you ASAP!</h4>
             </Center>
           </InputField>
         )}
         <Center>
-          <Button type="submit" disabled={isSubmitting}>
+          <button type="submit" disabled={isSubmitting}>
             Submit
-          </Button>
+          </button>
         </Center>
       </Form>
     )}

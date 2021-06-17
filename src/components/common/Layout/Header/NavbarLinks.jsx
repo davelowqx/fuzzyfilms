@@ -5,12 +5,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   a {
-    color: #000; !important
-    text-decoration: none;
-
-    @media (max-width: 960px) {
-      color: #000;
-    }
+    color: #212121 !important;
   }
 
   ${({ desktop }) =>
@@ -32,7 +27,7 @@ const Wrapper = styled.div`
 	}
 	`
       : `
-	padding: 3rem;
+	padding: 2rem;
 	display: flex;
 	flex-direction: column;
 
@@ -41,6 +36,9 @@ const Wrapper = styled.div`
 
 	&:last-child {
 		margin-bottom: unset;
+	}
+	&:hover {
+		background: none;
 	}
 }`}
 `;

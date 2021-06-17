@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "components/common";
+import { Container } from "components/common/Container";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -9,6 +9,10 @@ const Wrapper = styled.div`
 
 const Details = styled.div`
   padding: 1rem 0;
+`;
+
+const Image = styled.img`
+  padding: 0.5rem 0;
 `;
 
 const handleClick = () => console.log("magic!");
@@ -29,7 +33,7 @@ export const Skills = () => {
           test of time. <a onClick={handleClick}>See it for yourself!</a>
         </p>
         <figure>
-          <img alt="couple" src="/stills/couple1.png" />
+          <Image alt="couple" src="/stills/couple1.png" />
         </figure>
         <figure>
           <img alt="bride" src="/stills/bride1.png" />
@@ -42,8 +46,10 @@ export const Skills = () => {
             💰
           </span>
         </h2>
-        <p>Pay for what you need. By the hour, breaks excluded.</p>
-        <p>3am Gatecrash? Steady, no early surcharge.</p>
+        <pre>
+          Pay for what you need. By the hour, breaks excluded.{"\n"}3am
+          Gatecrash? Steady, no early surcharge.
+        </pre>
         <figure>
           <img alt="angpao" src="/stills/angpao.png" />
           <figcaption>Huat ah!</figcaption>

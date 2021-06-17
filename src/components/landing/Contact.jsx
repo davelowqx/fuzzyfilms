@@ -1,7 +1,7 @@
 import React from "react";
-import { Container } from "components/common";
+import { Container } from "components/common/Container";
 import styled from "styled-components";
-import ContactForm from "./ContactForm";
+import ContactForm from "./Form";
 
 const Wrapper = styled.div`
   padding: 3rem 0;

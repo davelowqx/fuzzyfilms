@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Container } from "components/common";
+import { Container } from "components/common/Container";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Wrapper = styled.div`
   padding: 4rem 0;
@@ -26,11 +27,44 @@ const Video = styled.iframe`
   border: none;
 `;
 
+const ButtonWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Button = styled.button`
+  background: none;
+  color: #707070;
+  border: 2px solid #707070;
+
+  &:hover:not([disabled]) {
+    background: none;
+    color: #212121;
+    border: 2px solid #212121;
+  }
+  &:active {
+    color: #212121;
+    border: 2px solid #212121;
+  }
+  &:disabled {
+    display: none;
+  }
+`;
+
 export const Portfolio = () => {
-  const videos = [
-    429553859, 395751458, 393493064, 393252091, 393251491, 393251469, 393251435,
-    393251262, 393250436,
-  ];
+  const [videos, setVideos] = React.useState([395751458, 393493064, 393252091]);
+
+  const handleClick = () => {
+    setVideos([
+      395751458, 393493064, 393252091, 429553859, 393251491, 393251469,
+      393251435, 393251262, 393250436,
+    ]);
+    window.scrollBy({
+      top: 500,
+      behavior: "smooth",
+    });
+  };
   return (
     <Wrapper as={Container} id="portfolio">
       <h2>PORTFOLIO</h2>
@@ -53,6 +87,12 @@ export const Portfolio = () => {
           <script src="https://player.vimeo.com/api/player.js"></script>
         </Grid>
       ))}
+      <br />
+      <ButtonWrapper>
+        <Button disabled={videos.length > 3} onClick={handleClick}>
+          View More
+        </Button>
+      </ButtonWrapper>
     </Wrapper>
   );
 };

@@ -79,11 +79,8 @@ export const Global = createGlobalStyle`
     dfn {
       font-style: italic;
     }
-    h1 {
-      font-size: 2em;
-      margin: 0.67em 0;
-    }
     mark {
+      color: inherit;
       background-color: var(--gold);
     }
     small {
@@ -207,6 +204,7 @@ export const Global = createGlobalStyle`
     }
     img {
       border-style: none;
+      width: 100%;
       max-width: 100%;
       margin-left: 0;
       margin-right: 0;
@@ -215,7 +213,7 @@ export const Global = createGlobalStyle`
       padding-left: 0;
       padding-right: 0;
       padding-top: 0;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0;
     }
     h1 {
       margin-left: 0;
@@ -226,7 +224,7 @@ export const Global = createGlobalStyle`
       padding-right: 0;
       padding-top: 0;
       margin-bottom: 1.45rem;
-      color: inherit;
+      color: var(--black);
       font-weight: bold;
       text-rendering: optimizeLegibility;
       font-size: 2.25rem;
@@ -241,7 +239,7 @@ export const Global = createGlobalStyle`
       padding-right: 0;
       padding-top: 0;
       margin-bottom: 1.45rem;
-      color: inherit;
+      color: var(--black);
       font-weight: bold;
       text-rendering: optimizeLegibility;
       font-size: 1.62671rem;
@@ -256,7 +254,7 @@ export const Global = createGlobalStyle`
       padding-right: 0;
       padding-top: 0;
       margin-bottom: 1.45rem;
-      color: inherit;
+      color: var(--black);
       font-weight: bold;
       text-rendering: optimizeLegibility;
       font-size: 1.38316rem;
@@ -361,52 +359,36 @@ export const Global = createGlobalStyle`
       padding-top: 0;
       margin-bottom: 1.45rem;
     }
-    p {
+    p, pre {
       font-family: LibreFranklin;
       font-size: 0.85028rem;
-      line-height: 1.5;
+      line-height: 1.42;
       color: var(--dark-grey);
       margin-left: 0;
       margin-right: 0;
       margin-top: 0;
-      padding-bottom: 0;
+      margin-bottom: 1rem;
       padding-left: 0;
       padding-right: 0;
       padding-top: 0;
-      margin-bottom: 1rem;
+      padding-bottom: 0;
     }
     figure {
       margin-left: 0;
       margin-right: 0;
       margin-top: 0;
+      margin-bottom: 0;
       padding-bottom: 0;
       padding-left: 0;
       padding-right: 0;
       padding-top: 0;
-      margin-bottom: .5rem;
     }
     figcaption {
+      margin-bottom: 0;
       font-family: LibreFranklin;
       text-align: center;
       font-size: 0.65rem;
       color: var(--dark-grey);
-    }
-    pre {
-      margin-left: 0;
-      margin-right: 0;
-      margin-top: 0;
-      padding-bottom: 0;
-      padding-left: 0;
-      padding-right: 0;
-      padding-top: 0;
-      margin-bottom: 1.45rem;
-      font-size: 0.85rem;
-      line-height: 1.42;
-      background: hsla(0, 0%, 0%, 0.04);
-      border-radius: 3px;
-      overflow: auto;
-      word-wrap: normal;
-      padding: 1.45rem;
     }
     table {
       margin-left: 0;
@@ -484,9 +466,9 @@ export const Global = createGlobalStyle`
       padding-right: 0;
       padding-top: 0;
       margin-bottom: calc(1.45rem - 1px);
-      background: hsla(0, 0%, 0%, 0.2);
+      background: var(--light-grey);
       border: none;
-      height: 1px;
+      height: 0.5px;
     }
     address {
       margin-left: 0;
@@ -638,6 +620,53 @@ export const Global = createGlobalStyle`
       font-feature-settings: 'kern', 'liga', 'clig', 'calt';
     }
 
+    button {
+      cursor: pointer;
+      padding: 0.7rem 2.5rem;
+      width: unset;
+      border: none;
+      -webkit-appearance: none;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      color: var(--black);
+      background: var(--gold);
+      transition-duration: 0.3s;
+      border-radius: 3px;
+      @media (max-width: 960px) {
+        width: 100%;
+      }
+    }
+    textarea, input {
+      width: 100%;
+      box-sizing: border-box;
+      border: 2px solid var(--gold);
+      padding: 0.8rem 1rem;
+      border-radius: 3px;
+      margin-bottom: 0.5rem;
+      transition: 0.3s;
+      resize: vertical;
+      font-size: 1rem;
+
+
+      &::placeholder {
+        color: var(--light-grey);
+      }
+    }
+
+    button:not([disabled]):hover {
+	background: var(--light-grey);
+    }
+    button:active {
+	background: var(--blue);
+    }
+    button:disabled{
+	cursor: default;
+	    opacity: 0.25;
+    }
 
     input, select, textarea, button {
       &:focus {

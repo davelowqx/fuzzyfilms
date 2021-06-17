@@ -1,6 +1,6 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { Container } from "components/common";
+import { Container } from "components/common/Container";
 import styled from "styled-components";
 
 const Wrapper = styled.div`

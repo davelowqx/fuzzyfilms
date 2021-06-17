@@ -1,12 +1,13 @@
 module.exports = {
-  defaultTitle: "fuzzyfilms.co",
-  logo: "https://portfolio.smakosh.com/favicon/favicon.png",
-  author: "Dave Low",
+  defaultTitle: "fuzzyfilms",
+  logo: "https://fuzzyfilms.co/favicon/favicon.png",
+  author: "Dave",
   url: "https://fuzzyfilms.co",
-  legalName: "Dave Low",
-  defaultDescription: "I’m Dave a wedding videographer!",
+  legalName: "Dave",
+  defaultDescription: "Wedding Videography Singapore",
   socialLinks: {
     instagram: "https://instagram.com/fuzzyfilms.co",
+    vimeo: "https://vimeo.com/fuzzyfilms",
   },
   googleAnalyticsID: "UA-88875900-4",
   themeColor: "#E1C48F",

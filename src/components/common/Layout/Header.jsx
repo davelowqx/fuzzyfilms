@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
-import Hamburger from "./Hamburger";
-import Sidebar from "./Sidebar";
+import Navbar from "./Header/Navbar";
+import Hamburger from "./Header/Hamburger";
+import Sidebar from "./Header/Sidebar";
 import styled from "styled-components";
 
 const Wrapper = styled.div`

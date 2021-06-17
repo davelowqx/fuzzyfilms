@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "components/common";
+import { Container } from "components/common/Container";
 import footerIllustration from "assets/illustrations/footer.svg";
 import styled from "styled-components";
 
@@ -32,31 +32,39 @@ const Links = styled.div`
   align-items: center;
 
   a {
-    margin: 0 0.5rem;
-
     img {
       margin: 0;
     }
 
-    &:first-child,
+    &:first-child {
+      margin: 0 2.5px 0 0;
+    }
     &:last-child {
-      margin: 0;
+      margin: 0 0 0 2.5px;
     }
   }
 `;
 
 const Details = styled.div`
-  span {
-    color: #212121;
-  }
-
-  h3 {
+  a {
     font-family: "Affectionately Yours";
+    font-weight: normal;
+    font-size: 20pt;
     color: #212121;
+    display: block;
+    margin-bottom: 1rem;
+    &:active,
+    &:hover {
+      cursor: pointer;
+      background: none;
+    }
+  }
+  p {
+    margin-bottom: 0.5rem;
   }
 
   @media (max-width: 680px) {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -64,13 +72,19 @@ export const Footer = () => (
   <Wrapper>
     <Flex as={Container}>
       <Details>
-        <h3>fuzzyfilms</h3>
-        <span>
+        <a
+          onClick={() =>
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+          }
+        >
+          fuzzyfilms
+        </a>
+        <p>
           © {new Date().getFullYear()} | Made with{" "}
           <span aria-label="love" role="img">
             💖
           </span>
-        </span>
+        </p>
       </Details>
       <Links>
         <a
@@ -79,6 +93,13 @@ export const Footer = () => (
           rel="noopener noreferrer"
         >
           <img width="24" src={"/icons/instagram.svg"} alt={"Instagram"} />
+        </a>
+        <a
+          href={"https://vimeo.com/fuzzyfilms"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img width="24" src={"/icons/vimeo.svg"} alt={"Vimeo"} />
         </a>
       </Links>
     </Flex>
