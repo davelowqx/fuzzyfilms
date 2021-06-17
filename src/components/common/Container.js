@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const Container = styled.div`
   max-width: 1280px;
   margin: auto;
-  width: 88%;
+  width: 90%;
 
   @media (max-width: 601px) {
-    width: 93%;
+    width: 95%;
   }
 `;

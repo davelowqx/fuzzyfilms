@@ -74,8 +74,8 @@ export const Portfolio = () => {
           🍿
         </span>
       </p>
-      {videos.map((id) => (
-        <Grid>
+      {videos.map((id, index) => (
+        <Grid id={index}>
           <VideoWrapper>
             <Video
               src={`https://player.vimeo.com/video/${id}?color=E1C48F`}
@@ -89,8 +89,8 @@ export const Portfolio = () => {
       ))}
       <br />
       <ButtonWrapper>
-        <Button disabled={videos.length > 3} onClick={handleClick}>
-          View More
+        <Button href="#4" disabled={videos.length > 3} onClick={handleClick}>
+          More!
         </Button>
       </ButtonWrapper>
     </Wrapper>
