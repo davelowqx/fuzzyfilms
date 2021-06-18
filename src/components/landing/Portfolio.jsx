@@ -29,6 +29,7 @@ export const Portfolio = () => {
         <div className="media" id={index}>
           <div className="video" id={index}>
             <iframe
+              title={id}
               src={`https://player.vimeo.com/video/${id}?color=E1C48F`}
               frameborder="0"
               allow="autoplay; fullscreen; picture-in-picture"

@@ -9,9 +9,8 @@ module.exports = {
     instagram: "https://instagram.com/fuzzyfilms.co",
     vimeo: "https://vimeo.com/fuzzyfilms",
   },
-  googleAnalyticsID: "UA-88875900-4",
   themeColor: "#E1C48F",
-  backgroundColor: "#E1C48F",
+  backgroundColor: "#fcfcfc",
   address: {
     city: "City",
     region: "Region",

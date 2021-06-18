@@ -72,7 +72,9 @@ export const Footer = () => (
     <div className="container">
       <Flex>
         <Details>
-          <a onClick={() => window.scrollTo({ top: 0 })}>fuzzyfilms</a>
+          <a href="" onClick={() => window.scrollTo({ top: 0 })}>
+            fuzzyfilms
+          </a>
           <p>
             © {new Date().getFullYear()} | Made with{" "}
             <span aria-label="love" role="img">

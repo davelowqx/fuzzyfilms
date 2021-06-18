@@ -4,7 +4,6 @@ import { Intro } from "components/landing/Intro";
 import { Portfolio } from "components/landing/Portfolio";
 import { Skills } from "components/landing/Skills";
 import { Contact } from "components/landing/Contact";
-import styled from "styled-components";
 
 const Home = () => (
   <Layout>
