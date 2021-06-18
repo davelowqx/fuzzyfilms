@@ -21,7 +21,6 @@ const Center = styled.div`
 
 const InputField = styled.div`
   position: relative;
-  margin-bottom: 1rem;
 `;
 
 const Input = styled.input`
