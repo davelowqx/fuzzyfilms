@@ -3,9 +3,9 @@ import Helmet from "react-helmet";
 import Thumbnail from "assets/thumbnail/thumbnail.png";
 
 import {
-  address,
   defaultTitle,
   defaultDescription,
+  keywords,
   url,
   logo,
   foundingDate,
@@ -23,19 +23,14 @@ export const Seo = ({
     url: "${url}",
     logo: "${logo}",
     foundingDate: "${foundingDate}",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "${address.city}",
-      addressRegion: "${address.region}",
-      addressCountry: "${address.country}",
-      postalCode: "${address.zipCode}",
-    },
     sameAs: ["${socialLinks.instagram}", "${socialLinks.vimeo}"],
   }`;
 
   return (
     <Helmet>
+      <meta charset="utf-8" />
       <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
       <meta name="image" content={Thumbnail} />
 
       <meta property="og:url" content={`${url}${location}`} />
@@ -43,7 +38,7 @@ export const Seo = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={Thumbnail} />
-      <meta charset="utf-8" />
+      <link rel="canonical" href={`${url}${location}`} />
 
       <script type="application/ld+json">{structuredDataOrganization}</script>
       <title>{title}</title>
