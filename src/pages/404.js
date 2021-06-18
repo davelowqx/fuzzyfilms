@@ -1,10 +1,9 @@
 import React from "react";
-import { Layout } from "components/common/Layout";
-import { Seo } from "components/common/Seo";
-import { Container } from "components/common/Container";
+import { Layout } from "components/layout";
+import { Seo } from "components/Seo";
 import styled from "styled-components";
 
-const Wrapper = styled(Container)`
+const Wrapper = styled.div`
   text-align: center;
 `;
 

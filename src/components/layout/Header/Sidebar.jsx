@@ -1,41 +1,32 @@
 import React from "react";
-import NavbarLinks from "./NavbarLinks";
+import Links from "./Links";
 
 import styled from "styled-components";
 
 const Wrapper = styled.div`
   position: fixed;
   z-index: 4;
-  overflow: auto;
   top: 0px;
-  right: -275px;
-  width: 0;
-  opacity: 0;
+  right: -12rem;
+  width: 12rem;
   height: 100%;
   background-color: #fff;
-  transition: all 350ms cubic-bezier(0.6, 0.05, 0.28, 0.91);
+  transition: right 400ms cubic-bezier(0.6, 0.05, 0.28, 0.91);
 
   ${({ active }) =>
     active &&
     `
-			width: 20%;
-			right: 0px;
-			opacity: 1;
+			right: 0rem;
 
 			@media (max-width: 960px) {
-				width: 30%;
-			}
-
-			@media (max-width: 600px) {
-				width: 50%;
 			}
 	`}
 `;
 
 const Sidebar = ({ sidebar, toggle }) => {
   return (
-    <Wrapper active={sidebar} onClick={toggle}>
-      <NavbarLinks />
+    <Wrapper active={sidebar} onClick={() => toggle(false)}>
+      <Links toggle={toggle} />
     </Wrapper>
   );
 };

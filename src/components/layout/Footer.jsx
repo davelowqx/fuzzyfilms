@@ -1,5 +1,4 @@
 import React from "react";
-import { Container } from "components/common/Container";
 import footerIllustration from "assets/illustrations/footer.svg";
 import styled from "styled-components";
 
@@ -70,38 +69,34 @@ const Details = styled.div`
 
 export const Footer = () => (
   <Wrapper>
-    <Flex as={Container}>
-      <Details>
-        <a
-          onClick={() =>
-            window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
-          }
-        >
-          fuzzyfilms
-        </a>
-        <p>
-          © {new Date().getFullYear()} | Made with{" "}
-          <span aria-label="love" role="img">
-            💖
-          </span>
-        </p>
-      </Details>
-      <Links>
-        <a
-          href={"https://instagram.com/fuzzyfilms.co"}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img width="24" src={"/icons/instagram.svg"} alt={"Instagram"} />
-        </a>
-        <a
-          href={"https://vimeo.com/fuzzyfilms"}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img width="24" src={"/icons/vimeo.svg"} alt={"Vimeo"} />
-        </a>
-      </Links>
-    </Flex>
+    <div className="container">
+      <Flex>
+        <Details>
+          <a onClick={() => window.scrollTo({ top: 0 })}>fuzzyfilms</a>
+          <p>
+            © {new Date().getFullYear()} | Made with{" "}
+            <span aria-label="love" role="img">
+              💖
+            </span>
+          </p>
+        </Details>
+        <Links>
+          <a
+            href={"https://instagram.com/fuzzyfilms.co"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img width="24" src={"/icons/instagram.svg"} alt={"Instagram"} />
+          </a>
+          <a
+            href={"https://vimeo.com/fuzzyfilms"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img width="24" src={"/icons/vimeo.svg"} alt={"Vimeo"} />
+          </a>
+        </Links>
+      </Flex>
+    </div>
   </Wrapper>
 );

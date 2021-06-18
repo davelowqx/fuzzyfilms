@@ -1,39 +1,49 @@
 import React, { useState } from "react";
-import Navbar from "./Header/Navbar";
 import Hamburger from "./Header/Hamburger";
 import Sidebar from "./Header/Sidebar";
 import styled from "styled-components";
-
-const Wrapper = styled.div`
-  background: transparent;
-  width: 100%;
-`;
+import Links from "./Header/Links";
 
 const Overlay = styled.div`
+  background-color: black;
   position: fixed;
-  background: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
+  top: 0;
+  opacity: 0;
   display: none;
   transition: 0.4s;
 
   ${({ sidebar }) =>
     sidebar &&
     `
-			display: block;
+    opacity: 0.5;
+    display: block;
 			z-index: 4;	
 	`}
+`;
+
+const Wrapper = styled.div`
+  padding: 1.2rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const Header = () => {
   const [sidebar, toggle] = useState(false);
 
   return (
-    <Wrapper>
+    <>
+      <div className="container">
+        <Wrapper>
+          <div className="brand">f</div>
+          <Links desktop />
+        </Wrapper>
+      </div>
       <Overlay sidebar={sidebar} onClick={() => toggle(!sidebar)} />
-      <Navbar />
       <Hamburger sidebar={sidebar} toggle={toggle} />
       <Sidebar sidebar={sidebar} toggle={toggle} />
-    </Wrapper>
+    </>
   );
 };

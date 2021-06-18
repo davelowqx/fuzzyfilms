@@ -9,7 +9,7 @@ export const Layout = ({ children }) => {
     <>
       <Seo />
       <Header />
-      {children}
+      <div className="container">{children}</div>
       <Footer />
     </>
   );

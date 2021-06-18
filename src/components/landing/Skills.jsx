@@ -1,25 +1,16 @@
 import React from "react";
-import { Container } from "components/common/Container";
 import styled from "styled-components";
-
-const Wrapper = styled.div`
-  padding: 3rem 0;
-  align-items: center;
-`;
+import ImageSlider from "./ImageSlider";
 
 const Details = styled.div`
   padding: 1rem 0;
 `;
 
-const Image = styled.img`
-  padding: 0.5rem 0;
-`;
-
-const handleClick = () => console.log("magic!");
-
 export const Skills = () => {
+  const [graded, toggle] = React.useState(true);
+
   return (
-    <Wrapper id="about" as={Container}>
+    <div className="wrapper" id="about">
       <Details>
         <h2>
           THE CINEMATIC DIFFERENCE{" "}
@@ -30,14 +21,21 @@ export const Skills = () => {
         <p>
           We operate specialised cinema cameras, paired with indstry-standard
           workflows to achieve high-end, filmic images that will withstand the
-          test of time. <a onClick={handleClick}>See it for yourself!</a>
+          test of time.{" "}
+          <a onClick={() => toggle(!graded)}>See it for yourself!</a>
         </p>
-        <figure>
-          <Image alt="couple" src="/stills/couple1.png" />
-        </figure>
-        <figure>
-          <img alt="bride" src="/stills/bride1.png" />
-        </figure>
+        <ImageSlider
+          left="stills/couple0.png"
+          right="stills/couple1.png"
+          graded={graded}
+          toggle={toggle}
+        />
+        <ImageSlider
+          left="stills/bride0.png"
+          right="stills/bride1.png"
+          graded={graded}
+          toggle={toggle}
+        />
       </Details>
       <Details>
         <h2>
@@ -64,13 +62,13 @@ export const Skills = () => {
         </h2>
         <p>
           Don't worry the slightest about posing for the camera. Allow us to
-          document your day, just the way it is ~.
+          document your day, just the way it is ~
         </p>
         <figure>
           <img alt="enjoy" src="/stills/enjoy.png" />
           <figcaption>Sparkles!</figcaption>
         </figure>
       </Details>
-    </Wrapper>
+    </div>
   );
 };

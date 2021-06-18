@@ -1,55 +1,45 @@
 import React from "react";
-
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+const Area = styled.div`
   z-index: 5;
   top: 1.6rem;
-  right: 1.8rem;
+  right: 1.6rem;
   display: none;
   cursor: pointer;
-  transition: left 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91);
+  padding: 0.3rem;
   position: absolute;
+  align-items: center;
 
   @media (max-width: 960px) {
     display: block;
   }
-
   ${({ sidebar }) =>
     sidebar &&
     `
-			right: 18%;
-			top: 1.4rem;
+    position: fixed;
 		
-			@media (max-width: 960px) {
-				right: 35%;
-				position: fixed;
-			}
-		
-			@media (max-width: 600px) {
-				right: 66%;
-			}
 	`}
 `;
 
 const Bar = styled.div`
   width: 1.6rem;
+  border-radius: 2px;
   height: 0.15rem;
   margin-bottom: 0.3rem;
   background-color: #212121;
-  transition: transform 500ms cubic-bezier(0.6, 0.05, 0.28, 0.91), opacity 500ms,
+  position: relative;
+  transition: transform 400ms cubic-bezier(0.6, 0.05, 0.28, 0.91), opacity 500ms,
     box-shadow 250ms, background-color 500ms;
-
-  @media (max-width: 600px) {
-    width: 1.6rem;
+  &:last-child {
+    margin-bottom: 0;
   }
 
   ${({ top, sidebar }) =>
     top &&
     sidebar &&
     `
-		background-color: #212121;
-		transform: translateY(8px) rotate(-135deg);
+		transform: translateY(0.45rem) rotate(-135deg);
 		
 	`}
 
@@ -57,25 +47,24 @@ const Bar = styled.div`
     mid &&
     sidebar &&
     `
-		transform: scale(0);
+		transform: scale(0, 1);
 		`}
 
 	${({ bottom, sidebar }) =>
     bottom &&
     sidebar &&
     `
-			background-color: #212121;
-			transform: translateY(-6px) rotate(-45deg);
+			transform: translateY(-0.45rem) rotate(-45deg);
 	`}
 `;
 
 const Hamburger = ({ sidebar, toggle }) => {
   return (
-    <Wrapper sidebar={sidebar} onClick={() => toggle(!sidebar)}>
+    <Area sidebar={sidebar} onClick={() => toggle(!sidebar)}>
       <Bar top sidebar={sidebar} />
       <Bar mid sidebar={sidebar} />
       <Bar bottom sidebar={sidebar} />
-    </Wrapper>
+    </Area>
   );
 };
 

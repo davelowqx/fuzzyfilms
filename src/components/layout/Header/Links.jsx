@@ -6,13 +6,14 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   a {
     color: #212121 !important;
+    background: none !important;
   }
+  display: flex;
 
   ${({ desktop }) =>
     desktop
       ? `
 	align-items: center;
-	display: flex;
 
 	@media (max-width: 960px) {
 		display: none;
@@ -24,26 +25,19 @@ const Wrapper = styled.div`
 	&:last-child {
 		margin-right: unset;
 	}
-	}
 	`
       : `
 	padding: 2rem;
-	display: flex;
 	flex-direction: column;
 
 	a {
 	margin-bottom: 1rem;
+	}
 
-	&:last-child {
-		margin-bottom: unset;
-	}
-	&:hover {
-		background: none;
-	}
 }`}
 `;
 
-const NavbarLinks = ({ desktop }) => {
+const Links = ({ desktop }) => {
   return (
     <Wrapper desktop={desktop}>
       <AnchorLink href="#about">About</AnchorLink>
@@ -53,4 +47,4 @@ const NavbarLinks = ({ desktop }) => {
   );
 };
 
-export default NavbarLinks;
+export default Links;
