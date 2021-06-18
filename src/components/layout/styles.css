@@ -258,7 +258,7 @@ input {
   padding: 0.8rem 1rem;
   border-radius: 3px;
   background: none;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-family: "Roboto", Helvetica, sans-serif;
   transition: 0.1s;
   resize: vertical;

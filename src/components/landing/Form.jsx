@@ -20,6 +20,7 @@ const Center = styled.div`
 `;
 
 const InputField = styled.div`
+  margin-bottom: 1rem;
   position: relative;
 `;
 
