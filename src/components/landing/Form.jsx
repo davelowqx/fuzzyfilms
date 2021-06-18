@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Formik, Form, FastField, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import Recaptcha from "react-google-recaptcha";
 import * as Yup from "yup";
 import styled from "styled-components";
@@ -59,7 +59,7 @@ const ContactForm = () => (
           url:
             process.env.NODE_ENV !== "development"
               ? `${url}/api/contact`
-              : "http://localhost:3000/api/contact",
+              : "http://localhost:8000/api/contact",
           headers: {
             "Content-Type": "application/json",
           },
@@ -83,7 +83,7 @@ const ContactForm = () => (
       <Form>
         <InputField>
           <Input
-            as={FastField}
+            as={Field}
             type="text"
             name="name"
             component="input"
@@ -98,7 +98,7 @@ const ContactForm = () => (
             id="email"
             aria-label="email"
             component="input"
-            as={FastField}
+            as={Field}
             type="email"
             name="email"
             placeholder="Email*"
@@ -108,7 +108,7 @@ const ContactForm = () => (
         </InputField>
         <InputField>
           <Input
-            as={FastField}
+            as={Field}
             component="textarea"
             aria-label="message"
             id="message"
@@ -125,9 +125,9 @@ const ContactForm = () => (
           values.message &&
           process.env.NODE_ENV !== "development" && (
             <InputField>
-              <FastField
+              <Field
                 component={Recaptcha}
-                sitekey={process.env.GATSBY_PORTFOLIO_RECAPTCHA_KEY}
+                sitekey={process.env.RECAPTCHA_KEY}
                 name="recaptcha"
                 onChange={(value) => setFieldValue("recaptcha", value)}
               />

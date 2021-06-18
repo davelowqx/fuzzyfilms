@@ -39,13 +39,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: config.googleAnalyticsID,
-        head: true,
-      },
-    },
-    {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: config.defaultTitle,

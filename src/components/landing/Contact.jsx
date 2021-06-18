@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ContactForm from "./Form";
+import Form from "./Form";
 
 export const Contact = () => (
   <div className="wrapper" id="contact">
@@ -11,6 +11,6 @@ export const Contact = () => (
       </span>
     </h2>
     <p>We'd love to hear from you!</p>
-    <ContactForm />
+    <Form />
   </div>
 );

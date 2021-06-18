@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   right: -12rem;
   width: 12rem;
   height: 100%;
-  background-color: #fff;
+  background-color: #fcfcfc;
   transition: right 400ms cubic-bezier(0.6, 0.05, 0.28, 0.91);
 
   ${({ active }) =>

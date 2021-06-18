@@ -20,9 +20,9 @@ export default async (req, res) => {
       data,
     });
 
-    res.status(200).json({ message: "Submission has been sent successfully" });
+    res.status(200).json({ message: "success" });
   } catch (err) {
     console.log(err);
-    res.status(400).json({ message: "Submission has failed" });
+    res.status(400).json({ message: "failed" });
   }
 };
