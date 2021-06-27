@@ -4,7 +4,7 @@ import { Footer } from "./Footer";
 import { Seo } from "../Seo";
 import "./styles.css";
 
-export const Layout = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <Seo />
@@ -14,3 +14,5 @@ export const Layout = ({ children }) => {
     </>
   );
 };
+
+export default Layout;

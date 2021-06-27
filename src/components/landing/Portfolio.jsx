@@ -7,7 +7,7 @@ const ButtonWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const Portfolio = () => {
+const Portfolio = () => {
   const [videos, setVideos] = React.useState([395751458, 393493064, 393252091]);
 
   const handleClick = () => {
@@ -53,3 +53,5 @@ export const Portfolio = () => {
     </div>
   );
 };
+
+export default Portfolio;

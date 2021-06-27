@@ -1,7 +1,7 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-export const Intro = () => {
+const Intro = () => {
   return (
     <div className={`wrapper center`}>
       <h1>
@@ -16,3 +16,5 @@ export const Intro = () => {
     </div>
   );
 };
+
+export default Intro;

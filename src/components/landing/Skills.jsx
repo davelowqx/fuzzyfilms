@@ -6,7 +6,7 @@ const Details = styled.div`
   padding: 1rem 0;
 `;
 
-export const Skills = () => {
+const Skills = () => {
   const [graded, toggle] = React.useState(true);
 
   return (
@@ -72,3 +72,5 @@ export const Skills = () => {
     </div>
   );
 };
+
+export default Skills;

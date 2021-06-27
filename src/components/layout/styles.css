@@ -1,16 +1,16 @@
 @font-face {
-  font-family: "Roboto";
+  font-family: "Roboto", Helvetica, sans-serif;
   font-style: normal;
   font-display: fallback;
-  font-weight: 400;
+  font-weight: normal;
   src: url("./fonts/Roboto-Regular.ttf");
 }
 
 @font-face {
-  font-family: "Roboto";
+  font-family: "Roboto", Helvetica, sans-serif;
   font-style: normal;
   font-display: fallback;
-  font-weight: 700;
+  font-weight: bold;
   src: url("./fonts/Roboto-Bold.ttf");
 }
 
@@ -32,7 +32,7 @@
   --gold: #e1c48f;
   --blue: #627a99;
   --gray-light: #c7ced6;
-  --grey-dark: #707070;
+  --gray-dark: #707070;
   --black: #212121;
   --white: #fcfcfc;
 }
@@ -57,18 +57,18 @@ a:link,
 a:visited {
   color: var(--gold);
   background-color: transparent;
-  text-decoration: none;
+  text-decoration: underline dotted var(--gold) 0.07em;
+  text-underline-offset: 0.2em;
   cursor: pointer;
 }
-a:hover {
-  color: var(--grey-dark);
+a:hover,
+a:active {
+  color: var(--gray-dark);
+  text-decoration: underline dotted var(--gray-dark) 0.07em;
   background-color: var(--gray-light);
-  text-decoration: underline dotted var(--grey-dark) 0.08em;
 }
 a:active {
-  color: var(--grey-dark);
   background-color: var(--blue);
-  text-decoration: underline dotted var(--grey-dark) 0.08em;
 }
 
 mark {
@@ -114,7 +114,7 @@ pre {
   font-family: LibreFranklin;
   font-size: 0.85028rem;
   line-height: 1.42;
-  color: var(--grey-dark);
+  color: var(--gray-dark);
   margin: 0;
   margin-bottom: 1rem;
   padding: 0;
@@ -188,7 +188,7 @@ figcaption {
   font-family: LibreFranklin;
   text-align: center;
   font-size: 0.65rem;
-  color: var(--grey-dark);
+  color: var(--gray-dark);
 }
 
 hr {
@@ -205,12 +205,11 @@ button {
   cursor: pointer;
   padding: 0.7rem 2.5rem;
   display: inline;
-  width: unset;
-  border: none;
   color: var(--black);
   background-color: var(--gold);
   transition-duration: 0.3s;
   border-radius: 3px;
+  border: 0 solid var(--black);
 }
 
 button:not([disabled]):hover {
@@ -226,18 +225,15 @@ button:disabled {
 
 button.secondary {
   background: none;
-  color: #707070;
-  border: 2px solid #707070;
+  color: var(--gray-dark);
+  border: 1px solid var(--gray-dark);
 }
 
-button.secondary:hover:not([disabled]) {
-  background: none;
-  color: #212121;
-  border: 2px solid #212121;
-}
+button.secondary:hover:not([disabled]),
 button.secondary:active {
-  color: #212121;
-  border: 2px solid #212121;
+  background: none;
+  color: var(--black);
+  border: 1px solid var(--black);
 }
 
 button.secondary:disabled {
@@ -271,9 +267,32 @@ textarea {
 }
 textarea:focus,
 input:focus {
-  outline-color: var(--grey-dark);
+  outline-color: var(--gray-dark);
 }
 textarea::placeholder,
 input::placeholder {
   color: var(--gray-light);
+}
+
+.style {
+  font-family: Gotham SSm A, Gotham SSm B, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  box-sizing: border-box;
+  border: 0 solid #eff2f7;
+  --tw-shadow: 0 0 transparent;
+  --tw-ring-inset: var(--tw-empty, /*!*/ /*!*/);
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgba(59, 159, 243, 0.5);
+  --tw-ring-offset-shadow: 0 0 transparent;
+  --tw-ring-shadow: 0 0 transparent;
+  cursor: pointer;
+  color: currentColor;
+  text-decoration: underline;
+  text-decoration-color: #a2c2df;
+  text-underline-offset: 3px;
 }

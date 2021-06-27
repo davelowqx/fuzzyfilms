@@ -34,7 +34,11 @@ const Links = styled.div`
     img {
       margin: 0;
     }
-
+    &:active,
+    &:hover {
+      cursor: pointer;
+      background: none;
+    }
     &:first-child {
       margin: 0 2.5px 0 0;
     }
@@ -67,7 +71,7 @@ const Details = styled.div`
   }
 `;
 
-export const Footer = () => (
+const Footer = () => (
   <Wrapper>
     <div className="container">
       <Flex>
@@ -102,3 +106,5 @@ export const Footer = () => (
     </div>
   </Wrapper>
 );
+
+export default Footer;

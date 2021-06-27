@@ -5,8 +5,13 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   a {
-    color: #212121 !important;
-    background: none !important;
+    color: #212121;
+    background: none;
+    text-decoration: none;
+    &:active,
+    &:hover {
+      text-decoration: underline dotted #212121 0.07em;
+    }
   }
   display: flex;
 
@@ -20,21 +25,21 @@ const Wrapper = styled.div`
 	}
 
 	a {
-	margin-right: 1rem;
+    margin-right: 1rem;
 
-	&:last-child {
-		margin-right: unset;
-	}
+    &:last-child {
+      margin-right: unset;
+    }
+  }
 	`
       : `
-	padding: 2rem;
-	flex-direction: column;
+  padding: 2rem;
+  flex-direction: column;
 
-	a {
-	margin-bottom: 1rem;
-	}
-
-}`}
+  a {
+  margin-bottom: 1rem;
+  }
+  `}
 `;
 
 const Links = ({ desktop }) => {

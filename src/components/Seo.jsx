@@ -12,7 +12,7 @@ import {
   socialLinks,
 } from "data/config";
 
-export const Seo = ({
+const Seo = ({
   title = defaultTitle,
   description = defaultDescription,
   location = "",
@@ -46,3 +46,5 @@ export const Seo = ({
     </Helmet>
   );
 };
+
+export default Seo;

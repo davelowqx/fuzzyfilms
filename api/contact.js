@@ -13,7 +13,7 @@ export default async (req, res) => {
 
     await axios({
       method: "POST",
-      url: `${process.env.PORTFOLIO_FORMIUM_ENDPOINT}`,
+      url: `${process.env.FORMIUM_ENDPOINT}`,
       headers: {
         "Content-Type": "application/json",
       },

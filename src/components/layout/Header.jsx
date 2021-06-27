@@ -30,7 +30,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-export const Header = () => {
+const Header = () => {
   const [sidebar, toggle] = useState(false);
 
   return (
@@ -47,3 +47,5 @@ export const Header = () => {
     </>
   );
 };
+
+export default Header;
