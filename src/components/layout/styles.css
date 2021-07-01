@@ -1,14 +1,18 @@
 @font-face {
   font-family: "LibreFranklin";
-  font-weight: normal;
-  font-display: fallback;
+  font-weight: 300;
   src: url("./fonts/LibreFranklin-Light.ttf");
 }
 
 @font-face {
   font-family: "LibreFranklin";
-  font-weight: bold;
-  font-display: fallback;
+  font-weight: 400;
+  src: url("./fonts/LibreFranklin-Regular.ttf");
+}
+
+@font-face {
+  font-family: "LibreFranklin";
+  font-weight: 600;
   src: url("./fonts/LibreFranklin-SemiBold.ttf");
 }
 
@@ -38,7 +42,7 @@ html {
 
 body {
   font-family: "LibreFranklin";
-  font-weight: normal;
+  font-weight: 300;
   margin: 0;
   width: 100%;
   background-color: var(--white);
@@ -79,7 +83,7 @@ h6 {
   padding: 0;
   margin-bottom: 1.45rem;
   color: var(--black);
-  font-weight: bold;
+  font-weight: 600;
   text-rendering: optimizeLegibility;
   line-height: 1.1;
 }
@@ -195,6 +199,7 @@ hr {
 
 button {
   font-family: "LibreFranklin";
+  font-weight: 400;
   text-transform: uppercase;
   cursor: pointer;
   padding: 0.7rem 2.5rem;
@@ -244,24 +249,24 @@ textarea,
 input {
   width: 100%;
   font-family: "LibreFranklin";
+  font-weight: 300;
   box-sizing: border-box;
   border: 2px solid var(--gold);
-  padding: 0.8rem 1rem;
+  padding: 0.7em 1em;
   border-radius: 3px;
   background: none;
   margin-bottom: 0.5rem;
-  transition: 0.1s;
-  resize: vertical;
-  font-size: 1rem;
+  transition: 0.3s;
+  resize: none;
+  font-size: 0.85028rem;
 }
 textarea {
-  min-height: 6rem;
-  height: 8rem;
-  max-height: 10rem;
+  height: 8em;
 }
 textarea:focus,
 input:focus {
-  outline-color: var(--gray-dark);
+  border-color: var(--gray-dark);
+  outline: none;
 }
 textarea::placeholder,
 input::placeholder {
