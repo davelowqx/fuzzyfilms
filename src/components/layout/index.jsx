@@ -1,7 +1,7 @@
 import React from "react";
-import { Header } from "./Header";
-import { Footer } from "./Footer";
-import { Seo } from "../Seo";
+import Header from "./Header";
+import Footer from "./Footer";
+import Seo from "../Seo";
 import "./styles.css";
 
 const Layout = ({ children }) => {

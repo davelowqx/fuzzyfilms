@@ -55,7 +55,7 @@ const Details = styled.div`
     font-size: 20pt;
     color: #212121;
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     &:active,
     &:hover {
       cursor: pointer;

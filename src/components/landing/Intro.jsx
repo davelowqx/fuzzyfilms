@@ -12,7 +12,7 @@ const Intro = () => {
         currently searching for actual day videography, look no further.{" "}
         <AnchorLink href="#about">Here's why.</AnchorLink>
       </p>
-      <img alt="dance" src="/stills/dance.gif" />
+      <img alt="dance" src="/stills/dance640.gif" />
     </div>
   );
 };

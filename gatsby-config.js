@@ -5,15 +5,5 @@ require("dotenv").config({
 });
 
 module.exports = {
-  plugins: [
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-styled-components",
-    {
-      resolve: "gatsby-plugin-nprogress",
-      options: {
-        color: config.themeColor,
-        showSpinner: false,
-      },
-    },
-  ],
+  plugins: ["gatsby-plugin-react-helmet", "gatsby-plugin-styled-components"],
 };

@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import Recaptcha from "react-google-recaptcha";
 import * as Yup from "yup";
 import styled from "styled-components";
 
@@ -126,7 +125,7 @@ const ContactForm = () => (
           process.env.NODE_ENV !== "development" && (
             <InputField>
               <Field
-                component={Recaptcha}
+                //component={}
                 sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
                 name="recaptcha"
                 onChange={(value) => setFieldValue("recaptcha", value)}

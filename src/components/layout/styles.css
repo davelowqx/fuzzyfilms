@@ -1,29 +1,20 @@
 @font-face {
-  font-family: "Roboto", Helvetica, sans-serif;
-  font-style: normal;
-  font-display: fallback;
-  font-weight: normal;
-  src: url("./fonts/Roboto-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Roboto", Helvetica, sans-serif;
-  font-style: normal;
-  font-display: fallback;
-  font-weight: bold;
-  src: url("./fonts/Roboto-Bold.ttf");
-}
-
-@font-face {
   font-family: "LibreFranklin";
-  font-style: normal;
+  font-weight: normal;
   font-display: fallback;
   src: url("./fonts/LibreFranklin-Light.ttf");
 }
 
 @font-face {
+  font-family: "LibreFranklin";
+  font-weight: bold;
+  font-display: fallback;
+  src: url("./fonts/LibreFranklin-SemiBold.ttf");
+}
+
+@font-face {
   font-family: "Affectionately Yours";
-  font-style: normal;
+  font-weight: normal;
   font-display: fallback;
   src: url("./fonts/Affectionately-Yours.otf");
 }
@@ -46,7 +37,8 @@ html {
 }
 
 body {
-  font-family: "Roboto", Helvetica, sans-serif;
+  font-family: "LibreFranklin";
+  font-weight: normal;
   margin: 0;
   width: 100%;
   background-color: var(--white);
@@ -68,6 +60,7 @@ a:active {
   background-color: var(--gray-light);
 }
 a:active {
+  color: var(--black);
   background-color: var(--blue);
 }
 
@@ -111,7 +104,7 @@ h6 {
 
 p,
 pre {
-  font-family: LibreFranklin;
+  font-family: inherit;
   font-size: 0.85028rem;
   line-height: 1.42;
   color: var(--gray-dark);
@@ -185,7 +178,6 @@ figure {
 figcaption {
   display: block;
   margin: 0;
-  font-family: LibreFranklin;
   text-align: center;
   font-size: 0.65rem;
   color: var(--gray-dark);
@@ -202,6 +194,8 @@ hr {
 }
 
 button {
+  font-family: "LibreFranklin";
+  text-transform: uppercase;
   cursor: pointer;
   padding: 0.7rem 2.5rem;
   display: inline;
@@ -249,13 +243,13 @@ button.secondary:disabled {
 textarea,
 input {
   width: 100%;
+  font-family: "LibreFranklin";
   box-sizing: border-box;
   border: 2px solid var(--gold);
   padding: 0.8rem 1rem;
   border-radius: 3px;
   background: none;
   margin-bottom: 0.5rem;
-  font-family: "Roboto", Helvetica, sans-serif;
   transition: 0.1s;
   resize: vertical;
   font-size: 1rem;
@@ -272,27 +266,4 @@ input:focus {
 textarea::placeholder,
 input::placeholder {
   color: var(--gray-light);
-}
-
-.style {
-  font-family: Gotham SSm A, Gotham SSm B, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 300;
-  font-size: 0.75rem;
-  line-height: 1.25rem;
-  --tw-text-opacity: 1;
-  box-sizing: border-box;
-  border: 0 solid #eff2f7;
-  --tw-shadow: 0 0 transparent;
-  --tw-ring-inset: var(--tw-empty, /*!*/ /*!*/);
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgba(59, 159, 243, 0.5);
-  --tw-ring-offset-shadow: 0 0 transparent;
-  --tw-ring-shadow: 0 0 transparent;
-  cursor: pointer;
-  color: currentColor;
-  text-decoration: underline;
-  text-decoration-color: #a2c2df;
-  text-underline-offset: 3px;
 }
