@@ -88,12 +88,12 @@ const Skills = () => {
       </Details>
       <Details>
         <h2>
-          LOTSA UNGLAMS{" "}
+          BONUS UNGLAMS{" "}
           <span role="img" aria-label="">
-            🤡
+            🙈
           </span>
         </h2>
-        <p>Because authentic moments aren't usually the most glamorous...</p>
+        <p>Because authentic moments aren't usually the most glamorous.</p>
         <figure>
           <div className="img">
             <StaticImage
