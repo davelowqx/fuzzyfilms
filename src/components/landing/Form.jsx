@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components";
@@ -21,6 +20,13 @@ const Input = styled.input`
 
 const ContactForm = () => {
   const recaptchaRef = React.useRef();
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
 
   return (
     <Formik
@@ -29,7 +35,7 @@ const ContactForm = () => {
         email: "",
         message: "",
         recaptcha: "",
-        success: true,
+        button: "submit",
       }}
       validationSchema={Yup.object().shape({
         name: Yup.string().required("Name is required"),
@@ -37,40 +43,37 @@ const ContactForm = () => {
           .email("Invalid email")
           .required("Email is required"),
         message: Yup.string().required("Message is required"),
-        recaptcha: Yup.string().required("Robots are not welcome!"),
+        recaptcha:
+          process.env.NODE_ENV !== "development"
+            ? Yup.string().required("Robots are not welcome!")
+            : Yup.string(),
       })}
-      onSubmit={async (
+      onSubmit={(
         { name, email, message },
         { setSubmitting, resetForm, setFieldValue }
       ) => {
-        try {
-          await axios({
-            method: "POST",
-            url:
-              process.env.NODE_ENV !== "development"
-                ? `${url}/api/contact`
-                : "http://localhost:8000/api/contact",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            data: JSON.stringify({
-              name,
-              email,
-              message,
-            }),
+        fetch("/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: encode({ "form-name": "contact", name, email, message }),
+        })
+          .then(() => {
+            setFieldValue("button", "message sent!");
+            setTimeout(() => resetForm(), 10000);
+          })
+          .catch((err) => {
+            setFieldValue("button", "oops! please try again");
+            console.log(err);
+          })
+          .finally(() => {
+            setSubmitting(false);
           });
-          setSubmitting(false);
-          setFieldValue("success", true);
-          setTimeout(() => resetForm(), 6000);
-        } catch (err) {
-          setSubmitting(false);
-          setFieldValue("success", false);
-          alert("Something went wrong, please try again!");
-        }
       }}
     >
       {({ values, touched, errors, setFieldValue, isSubmitting }) => (
-        <Form>
+        <Form name="contact" data-netlify={true}>
           <InputField>
             <Input
               as={Field}
@@ -106,19 +109,22 @@ const ContactForm = () => {
               error={touched.message && errors.message}
             />
           </InputField>
-          {values.name && values.email && values.message && (
-            <InputField>
-              <Field
-                component={ReCAPTCHA}
-                ref={recaptchaRef}
-                sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
-                name="recaptcha"
-                onChange={(value) => setFieldValue("recaptcha", value)}
-              />
-            </InputField>
-          )}
+          {values.name &&
+            values.email &&
+            values.message &&
+            process.env.NODE_ENV !== "development" && (
+              <InputField>
+                <Field
+                  component={ReCAPTCHA}
+                  ref={recaptchaRef}
+                  sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
+                  name="recaptcha"
+                  onChange={(value) => setFieldValue("recaptcha", value)}
+                />
+              </InputField>
+            )}
           <button type="submit" disabled={isSubmitting}>
-            {values.success ? "Message Sent!" : "Submit"}
+            {values.button}
           </button>
         </Form>
       )}

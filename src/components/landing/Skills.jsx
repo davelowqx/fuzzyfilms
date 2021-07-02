@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import ImageSlider from "./ImageSlider";
+import couple0 from "assets/stills/couple0.png";
+import couple1 from "assets/stills/couple1.png";
+import bride0 from "assets/stills/bride0.png";
+import bride1 from "assets/stills/bride1.png";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Details = styled.div`
   padding: 1rem 0;
@@ -25,14 +30,14 @@ const Skills = () => {
           <a onClick={() => toggle(!graded)}>See it for yourself!</a>
         </p>
         <ImageSlider
-          left="stills/couple0.png"
-          right="stills/couple1.png"
+          left={couple0}
+          right={couple1}
           graded={graded}
           toggle={toggle}
         />
         <ImageSlider
-          left="stills/bride0.png"
-          right="stills/bride1.png"
+          left={bride0}
+          right={bride1}
           graded={graded}
           toggle={toggle}
         />
@@ -49,7 +54,13 @@ const Skills = () => {
           Gatecrash? Steady, no early surcharge.
         </pre>
         <figure>
-          <img alt="angpao" src="/stills/angpao.png" />
+          <div className="img">
+            <StaticImage
+              alt="angpao"
+              src="../../assets/stills/angpao.png"
+              quality={100}
+            />
+          </div>
           <figcaption>Huat ah!</figcaption>
         </figure>
       </Details>
@@ -65,8 +76,33 @@ const Skills = () => {
           document your day, just the way it is ~
         </p>
         <figure>
-          <img alt="enjoy" src="/stills/enjoy.png" />
-          <figcaption>Sparkles!</figcaption>
+          <div className="img">
+            <StaticImage
+              alt="enjoy"
+              src="../../assets/stills/enjoy.png"
+              quality={100}
+            />
+          </div>
+          <figcaption>*Sparkles*</figcaption>
+        </figure>
+      </Details>
+      <Details>
+        <h2>
+          LOTSA UNGLAMS{" "}
+          <span role="img" aria-label="">
+            🤡
+          </span>
+        </h2>
+        <p>Because authentic moments aren't usually the most glamorous...</p>
+        <figure>
+          <div className="img">
+            <StaticImage
+              alt="enjoy"
+              src="../../assets/stills/me.png"
+              quality={100}
+            />
+          </div>
+          <figcaption>Me 24/7</figcaption>
         </figure>
       </Details>
     </div>

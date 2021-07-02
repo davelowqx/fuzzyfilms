@@ -10,7 +10,7 @@ import {
   logo,
   foundingDate,
   socialLinks,
-} from "data/config";
+} from "config";
 
 const Seo = ({
   title = defaultTitle,

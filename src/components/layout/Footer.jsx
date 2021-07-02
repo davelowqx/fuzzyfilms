@@ -1,6 +1,8 @@
 import React from "react";
 import footerIllustration from "assets/illustrations/footer.svg";
 import styled from "styled-components";
+import vimeo from "assets/icons/vimeo.svg";
+import instagram from "assets/icons/instagram.svg";
 
 const Wrapper = styled.div`
   padding: 28rem 0 4rem 0;
@@ -92,14 +94,14 @@ const Footer = () => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img width="24" src={"/icons/instagram.svg"} alt={"Instagram"} />
+            <img width="24" src={instagram} alt={"Instagram"} />
           </a>
           <a
             href={"https://vimeo.com/fuzzyfilms"}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img width="24" src={"/icons/vimeo.svg"} alt={"Vimeo"} />
+            <img width="24" src={vimeo} alt={"Vimeo"} />
           </a>
         </Links>
       </Flex>

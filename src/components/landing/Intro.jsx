@@ -1,5 +1,6 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import dance from "assets/stills/dance640.gif";
 
 const Intro = () => {
   return (
@@ -12,7 +13,7 @@ const Intro = () => {
         currently searching for actual day videography, look no further.{" "}
         <AnchorLink href="#about">Here's why.</AnchorLink>
       </p>
-      <img alt="dance" src="/stills/dance640.gif" />
+      <img alt="dance" src={dance} />
     </div>
   );
 };
