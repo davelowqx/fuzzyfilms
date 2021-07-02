@@ -74,6 +74,7 @@ const ContactForm = () => {
     >
       {({ values, touched, errors, setFieldValue, isSubmitting }) => (
         <Form name="contact" data-netlify={true}>
+          <input type="hidden" name="form-name" value="contact" />
           <InputField>
             <Input
               as={Field}
