@@ -12,7 +12,7 @@ const Details = styled.div`
 `;
 
 const Skills = () => {
-  const [graded, toggle] = React.useState(true);
+  const [graded, setGraded] = React.useState({ a: false, b: false, c: false });
 
   return (
     <div className="wrapper" id="about">
@@ -27,19 +27,27 @@ const Skills = () => {
           We operate specialised cinema cameras, paired with indstry-standard
           workflows to achieve high-end, filmic images that will withstand the
           test of time.{" "}
-          <a onClick={() => toggle(!graded)}>See it for yourself!</a>
+          <a
+            onClick={() => {
+              setGraded({ a: true, b: true, c: true });
+            }}
+          >
+            See it for yourself!
+          </a>
         </p>
         <ImageSlider
+          key="b"
           left={couple0}
           right={couple1}
-          graded={graded}
-          toggle={toggle}
+          graded={graded.b}
+          toggle={() => setGraded({ ...graded, b: !graded.b })}
         />
         <ImageSlider
+          key="c"
           left={bride0}
           right={bride1}
-          graded={graded}
-          toggle={toggle}
+          graded={graded.c}
+          toggle={() => setGraded({ ...graded, c: !graded.c })}
         />
       </Details>
       <Details>
