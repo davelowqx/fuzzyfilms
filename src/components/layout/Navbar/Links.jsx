@@ -1,9 +1,10 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-
 import styled from "styled-components";
 
 const Wrapper = styled.div`
+  position: relative;
+  z-index: 1;
   a {
     color: #212121;
     background: none;
@@ -33,8 +34,9 @@ const Wrapper = styled.div`
   }
 	`
       : `
-  padding: 2rem;
+  padding: 1rem;
   flex-direction: column;
+  background-color: #f5f5f5;
 
   a {
   margin-bottom: 1rem;
@@ -42,7 +44,7 @@ const Wrapper = styled.div`
   `}
 `;
 
-const Links = ({ desktop }) => {
+const Links = ({ desktop, topbar }) => {
   return (
     <Wrapper desktop={desktop}>
       <AnchorLink href="#about">About</AnchorLink>

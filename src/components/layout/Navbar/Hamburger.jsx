@@ -3,21 +3,18 @@ import styled from "styled-components";
 
 const Area = styled.div`
   z-index: 5;
-  top: 1.6rem;
-  right: 1.6rem;
   display: none;
   cursor: pointer;
   padding: 0.3rem;
-  position: absolute;
+  position: relative;
   align-items: center;
 
   @media (max-width: 960px) {
     display: block;
   }
-  ${({ sidebar }) =>
-    sidebar &&
+  ${({ topbar }) =>
+    topbar &&
     `
-    position: fixed;
 		
 	`}
 `;
@@ -35,35 +32,35 @@ const Bar = styled.div`
     margin-bottom: 0;
   }
 
-  ${({ top, sidebar }) =>
+  ${({ top, topbar }) =>
     top &&
-    sidebar &&
+    topbar &&
     `
 		transform: translateY(0.45rem) rotate(-135deg);
 		
 	`}
 
-  ${({ mid, sidebar }) =>
+  ${({ mid, topbar }) =>
     mid &&
-    sidebar &&
+    topbar &&
     `
 		transform: scale(0, 1);
 		`}
 
-	${({ bottom, sidebar }) =>
+	${({ bottom, topbar }) =>
     bottom &&
-    sidebar &&
+    topbar &&
     `
 			transform: translateY(-0.45rem) rotate(-45deg);
 	`}
 `;
 
-const Hamburger = ({ sidebar, toggle }) => {
+const Hamburger = ({ topbar, setTopbar }) => {
   return (
-    <Area sidebar={sidebar} onClick={() => toggle(!sidebar)}>
-      <Bar top sidebar={sidebar} />
-      <Bar mid sidebar={sidebar} />
-      <Bar bottom sidebar={sidebar} />
+    <Area topbar={topbar} onClick={() => setTopbar(!topbar)}>
+      <Bar top topbar={topbar} />
+      <Bar mid topbar={topbar} />
+      <Bar bottom topbar={topbar} />
     </Area>
   );
 };

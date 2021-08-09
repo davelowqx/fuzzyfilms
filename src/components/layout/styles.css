@@ -26,6 +26,7 @@
 :root {
   --gold: #e1c48f;
   --blue: #627a99;
+  --gray-xlight: #f5f5f5;
   --gray-light: #c7ced6;
   --gray-dark: #707070;
   --black: #212121;
@@ -136,6 +137,22 @@ div.container {
 
 div.wrapper {
   padding: 2.5rem 0;
+}
+
+div.priority {
+  position: relative;
+  z-index: 4;
+}
+
+div.navbar {
+  position: relative;
+  background-color: var(--gray-xlight);
+}
+
+div.bg {
+  position: relative;
+  z-index: 2;
+  background-color: var(--white);
 }
 
 div.media {

@@ -4,7 +4,7 @@ import dance from "assets/stills/dance640.gif";
 
 const Intro = () => {
   return (
-    <div className={`wrapper center`}>
+    <div className={`wrapper center priority`}>
       <h1>
         IT'S YOUR <mark>SPECIAL DAY </mark>
       </h1>
