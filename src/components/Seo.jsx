@@ -39,6 +39,7 @@ const Seo = ({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={Thumbnail} />
       <link rel="canonical" href={`${url}${location}`} />
+      <link rel="icon" href="https://www.fuzzyfilms.co/favicon.png" />
 
       <script type="application/ld+json">{structuredDataOrganization}</script>
       <title>{title}</title>

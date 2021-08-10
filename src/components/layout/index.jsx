@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Seo />
-      <Banner banner={banner}>🎉 FREE LIVESTREAM PROVIDED 🎉</Banner>
+      <Banner banner={banner}>🎉 COMPLIMENTARY LIVESTREAMING 🎉</Banner>
       <Navbar />
       <div className="bg">
         <div className="container">{children}</div>

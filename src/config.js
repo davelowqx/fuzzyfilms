@@ -1,5 +1,5 @@
 module.exports = {
-  defaultTitle: "fuzzyfilms",
+  defaultTitle: "Wedding Videography | fuzzyfilms.co",
   logo: "https://fuzzyfilms.co/favicon.png",
   url: "https://fuzzyfilms.co",
   defaultDescription:
