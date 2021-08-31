@@ -31,7 +31,6 @@ const Portfolio = () => {
             <iframe
               title={id}
               src={`https://player.vimeo.com/video/${id}?color=E1C48F`}
-              frameborder="0"
               allow="autoplay; fullscreen; picture-in-picture"
               allowfullscreen
             ></iframe>
