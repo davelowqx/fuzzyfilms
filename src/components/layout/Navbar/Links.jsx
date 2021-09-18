@@ -39,7 +39,7 @@ const Wrapper = styled.div`
   background-color: #f5f5f5;
 
   a {
-  margin-bottom: 1rem;
+    margin: 0.5rem 0;
   }
   `}
 `;

@@ -168,9 +168,11 @@ div.center {
 }
 
 div.brand {
+  width: 1em;
+  text-align: center;
   font-family: "Affectionately Yours";
   color: var(--gold);
-  font-size: 20pt;
+  font-size: 28px;
   cursor: default;
 }
 
