@@ -19,9 +19,14 @@ const Wrapper = styled.div`
 	`}
 `;
 
+const Divider = styled.hr`
+  width: 100%;
+`;
+
 const Topbar = ({ topbar, setTopbar }) => {
   return (
     <Wrapper active={topbar} onClick={() => setTopbar(false)}>
+      <Divider />
       <Links topbar={topbar} />
     </Wrapper>
   );

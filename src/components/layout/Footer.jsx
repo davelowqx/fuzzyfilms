@@ -5,15 +5,11 @@ import vimeo from "assets/icons/vimeo.svg";
 import instagram from "assets/icons/instagram.svg";
 
 const Wrapper = styled.div`
-  padding: 28rem 0 4rem 0;
+  padding: 14rem 0 4rem;
   background-image: url(${footerIllustration});
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
-
-  @media (max-width: 1960px) {
-    padding: 14rem 0 4rem;
-  }
 `;
 
 const Flex = styled.div`
