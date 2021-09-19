@@ -15,8 +15,8 @@ const ImageSlider = ({ left, right, graded, toggle }) => {
     <div className="media">
       <div className="video">
         <label className="switch">
-          <input type="checkbox" onClick={toggle} checked={graded}></input>
-          <span className="slider round"></span>
+          <input type="checkbox" onClick={toggle} checked={graded} />
+          <span className="switch"></span>
         </label>
         <Image show={!graded} src={left} />
         <Image show={graded} src={right} />
