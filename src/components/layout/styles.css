@@ -302,8 +302,8 @@ label.switch {
   z-index: 4;
   top: 22px;
   right: 15px;
-  width: 42px;
-  height: 24px;
+  width: 44px;
+  height: 26px;
 }
 
 /* checkbox */
@@ -321,20 +321,20 @@ span.switch {
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 24px;
+  border-radius: 26px;
   background-color: var(--gray-xlight);
   border: 2px solid var(--gray-light);
   transition: 0.4s;
 }
 
 /* switch lever */
-span.switch:before {
+span.switch:after {
   position: absolute;
   content: "";
-  height: 17px;
-  width: 17px;
-  left: 0px;
-  top: 0px;
+  height: 16px;
+  width: 16px;
+  left: 1px;
+  top: 1px;
   background-color: var(--white);
   border: 2px solid var(--gray-light);
   border-radius: 50%;
@@ -345,6 +345,6 @@ input:checked + span.switch {
   background-color: var(--gold);
 }
 
-input:checked + span.switch:before {
+input:checked + span.switch:after {
   transform: translateX(18px);
 }
