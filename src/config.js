@@ -1,6 +1,6 @@
 module.exports = {
   defaultTitle: "Wedding Videography | fuzzyfilms.co",
-  logo: "https://fuzzyfilms.co/favicon.png",
+  logo: "https://fuzzyfilms.co/favicon.ico",
   url: "https://fuzzyfilms.co",
   defaultDescription:
     "Wedding Videography Singapore - documenting your special day",
