@@ -29,20 +29,26 @@ const Seo = ({
   return (
     <Helmet>
       <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="image" content={Thumbnail} />
 
+      <meta property="og:locale" content="en_US" />
       <meta property="og:url" content={`${url}${location}`} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
+      <meta property="og:site_name" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={Thumbnail} />
+
       <link rel="canonical" href={`${url}${location}`} />
-      <link rel="icon" href="https://www.fuzzyfilms.co/favicon.ico" />
+
+      <link rel="shortcut icon" href={logo} type="image/x-icon" />
 
       <script type="application/ld+json">{structuredDataOrganization}</script>
-      <title>{title}</title>
       <html lang="en" dir="ltr" />
     </Helmet>
   );
