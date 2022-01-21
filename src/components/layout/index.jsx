@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import Seo from "../Seo";
 import styled from "styled-components";
 import "./styles.css";
 
@@ -42,7 +41,6 @@ const Layout = ({ children }) => {
   }, []);
   return (
     <>
-      <Seo />
       <Banner banner={banner}>
         <div>🎉 COMPLIMENTARY LIVESTREAMING 🎉</div>
       </Banner>
