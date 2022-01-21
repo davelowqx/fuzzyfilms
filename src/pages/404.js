@@ -10,7 +10,7 @@ const Container = styled.div`
 
 const NotFound = () => (
   <Layout>
-    <Seo title={"404: Not found"} location={"/404"} />
+    <Seo title={"404: Not found"} path={"/404"} />
     <Container>
       <h1>NOT FOUND</h1>
       <p>
