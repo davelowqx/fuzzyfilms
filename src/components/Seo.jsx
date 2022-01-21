@@ -2,7 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 
 const SITE_NAME = "Truly Cinematic | fuzzyfilms";
-const SITE_URL = "https://fuzzyfilms.co";
+const SITE_URL = "https://www.fuzzyfilms.co";
 const SITE_DESCRIPTION = "Truly Cinematic Wedding Films";
 
 const Seo = ({
