@@ -24,7 +24,6 @@
     "dev": "gatsby develop -o",
     "start": "gatsby develop -o",
     "reset": "rm -rf .cache/ public/",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "clean": "gatsby clean"
   }
 }
