@@ -52,7 +52,7 @@ const ContactForm = () => {
         { name, email, message },
         { setSubmitting, resetForm, setFieldValue }
       ) => {
-        fetch("/", {
+        fetch(process.env.GATSBY_FORM_ENDPOINT, {
           method: "POST",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -110,20 +110,17 @@ const ContactForm = () => {
               error={touched.message && errors.message}
             />
           </InputField>
-          {values.name &&
-            values.email &&
-            values.message &&
-            process.env.NODE_ENV !== "development" && (
-              <InputField>
-                <Field
-                  component={ReCAPTCHA}
-                  ref={recaptchaRef}
-                  sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
-                  name="recaptcha"
-                  onChange={(value) => setFieldValue("recaptcha", value)}
-                />
-              </InputField>
-            )}
+          {values.name && values.email && values.message && (
+            <InputField>
+              <Field
+                component={ReCAPTCHA}
+                ref={recaptchaRef}
+                sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
+                name="recaptcha"
+                onChange={(value) => setFieldValue("recaptcha", value)}
+              />
+            </InputField>
+          )}
           <button type="submit" disabled={isSubmitting}>
             {values.button}
           </button>
