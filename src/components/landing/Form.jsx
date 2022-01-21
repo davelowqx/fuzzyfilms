@@ -4,8 +4,6 @@ import * as Yup from "yup";
 import styled from "styled-components";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const url = "https://fuzzyfilms.co";
-
 const InputField = styled.div`
   margin-bottom: 1rem;
   position: relative;
@@ -35,7 +33,7 @@ const ContactForm = () => {
         email: "",
         message: "",
         recaptcha: "",
-        button: "submit",
+        button: "SUBMIT",
       }}
       validationSchema={Yup.object().shape({
         name: Yup.string().required("Name is required"),
@@ -43,32 +41,35 @@ const ContactForm = () => {
           .email("Invalid email")
           .required("Email is required"),
         message: Yup.string().required("Message is required"),
-        recaptcha:
-          process.env.NODE_ENV !== "development"
-            ? Yup.string().required("Robots are not welcome!")
-            : Yup.string(),
+        recaptcha: Yup.string().required("Robots are not welcome!"),
       })}
       onSubmit={(
-        { name, email, message },
+        { name, email, message, recaptcha },
         { setSubmitting, resetForm, setFieldValue }
       ) => {
-        fetch(process.env.GATSBY_FORM_ENDPOINT, {
+        fetch("/", {
           method: "POST",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
-          body: encode({ "form-name": "contact", name, email, message }),
+          body: encode({
+            "form-name": "contact",
+            name,
+            email,
+            message,
+            recaptcha,
+          }),
         })
           .then(() => {
-            setFieldValue("button", "message sent!");
-            setTimeout(() => resetForm(), 10000);
+            setFieldValue("button", "MESSAGE SENT!");
           })
           .catch((err) => {
-            setFieldValue("button", "oops! please try again");
+            setFieldValue("button", "OOPS! PLEASE TRY AGAIN");
             console.log(err);
           })
           .finally(() => {
             setSubmitting(false);
+            setTimeout(() => resetForm(), 5000);
           });
       }}
     >
